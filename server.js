@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const path = require('path');  // Load environment variables
+const path = require('path');
+const dotenv = require('dotenv');  // Load environment variables
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -19,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 // Endpoint to handle form submission
-app.post('/contact', (req, res) => {
+app.post('/contact.html', (req, res) => {
   const { name, email, subject, message } = req.body;
 
 
