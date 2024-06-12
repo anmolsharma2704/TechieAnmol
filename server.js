@@ -12,8 +12,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the main HTML file
 app.get('/', (req, res) => {
@@ -54,6 +55,9 @@ app.post('/contact', (req, res) => {
 app.get('/success', (req, res) => {
   res.send('We will contact you soon');
 });
+app.get("/*",(req,res)=>{
+  res.status(404).send("Go back to Home Page")
+})
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
