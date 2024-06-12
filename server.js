@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
-const dotenv = require('dotenv');  // Load environment variables
+const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,8 +23,6 @@ app.get('/', (req, res) => {
 // Endpoint to handle form submission
 app.post('/contact', (req, res) => {
   const { name, email, subject, message } = req.body;
-
-
 
   // Set up Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -48,13 +46,15 @@ app.post('/contact', (req, res) => {
       res.status(500).send('Something went wrong.');
     } else {
       console.log('Email sent: ' + email);
-      res.redirect("/success")
+      res.redirect('/success');
     }
   });
 });
-app.get("/success",(req,res)=>{
-  res.send("We will contact you soon")
-})
+
+app.get('/success', (req, res) => {
+  res.send('We will contact you soon');
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
