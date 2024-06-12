@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 // Endpoint to handle form submission
-app.post('/contact.html', (req, res) => {
+app.post('/contact', (req, res) => {
   const { name, email, subject, message } = req.body;
 
 
@@ -48,11 +48,13 @@ app.post('/contact.html', (req, res) => {
       res.status(500).send('Something went wrong.');
     } else {
       console.log('Email sent: ' + email);
-      res.status(200).send('Message sent successfully.');
+      res.redirect("/success")
     }
   });
 });
-
+app.get("/success",(req,res)=>{
+  res.send("We will contact you soon")
+})
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
