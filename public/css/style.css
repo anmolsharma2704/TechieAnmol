@@ -278,7 +278,7 @@ header{
     font-size: 30px;
     color: var(--primary);
 }
-.portfolio-container{
+.portfolio-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -287,9 +287,10 @@ header{
     margin-top: 50px;
     margin-bottom: 30px;
     grid-auto-rows: minmax(100px, auto);
+    opacity: 1;
 }
 
-.portfolio .img{
+.portfolio .img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,49 +300,61 @@ header{
     border: 1px solid var(--white);
     border-radius: 10px;
     position: relative;
-    background-image: url(images/ShreeLogo.png);
+    background-image: url(/images/ndr.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 1;
 }
-.portfolio .pi2{
-    background-image: url(images/vkLogo.png);
+
+.portfolio .pi1 {
+    background-image: url(/images/shreeEvents.png);
 }
-.portfolio .img::before{
+.portfolio .pi2 {
+    background-image: url(/images/vkLogo.png);
+}
+
+.portfolio .img::before {
     content: '';
     position: absolute;
-    opacity: 0;
+    opacity: 1;
     border-radius: 10px;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     backdrop-filter: blur(2px);
     background-color: rgba(9, 32, 43, 0.493);
 }
-.portfolio .img:hover::before{
+
+.portfolio .img:hover::before {
     opacity: 1;
 }
-.portfolio .img p{
+
+.portfolio .img p {
     width: 80%;
     z-index: 1;
-    opacity: 0;
-    transition: opacity .3s;
+    opacity: 1;
+    transition: opacity 0.3s;
     margin-bottom: 20px;
-    color: white;
+    color: var(--white);
 }
+
 .portfolio .img button {
-    opacity: 0;
-    transition: opacity .3s;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
+
 .portfolio .img:hover p,
-.portfolio .img:hover button{
+.portfolio .img:hover button {
     opacity: 1;
 }
-.portfolios{
+
+.portfolios {
     display: none;
 }
+
 
 .services-container{
     display: grid;
