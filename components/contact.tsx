@@ -30,7 +30,7 @@ const socials = [
   {
     name: "Resume",
     icon: Download,
-    href: "/api/resume",
+    href: "/resume.pdf",
     label: "Download my latest resume"
   }
 ]
@@ -181,6 +181,7 @@ export function Contact() {
                   key={index}
                   variants={itemVariants}
                   href={social.href}
+                  download={social.name === "Resume"}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="group flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
