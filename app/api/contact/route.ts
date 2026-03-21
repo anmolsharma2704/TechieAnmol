@@ -36,9 +36,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 })
     }
 
-    const smtpUser = process.env.SMTP_GMAIL_USER
-    const smtpPass = process.env.SMTP_GMAIL_PASS
-    const toEmail = process.env.CONTACT_TO_EMAIL
+    const smtpUser = process.env.SMPT_MAIL
+    const smtpPass = process.env.SMPT_PASSWORD
+    const toEmail = process.env.SMPT_SENT_MAIL_TO
 
     if (!smtpUser || !smtpPass || !toEmail) {
       return NextResponse.json(
