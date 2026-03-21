@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Linkedin, Github, Send, MapPin } from "lucide-react"
+import { Mail, Linkedin, Github, Send, MapPin, Download } from "lucide-react"
 import { motion } from "framer-motion"
 
 const socials = [
@@ -26,6 +26,12 @@ const socials = [
     icon: Github,
     href: "https://github.com/anmolsharma2704",
     label: "github.com/anmolsharma2704"
+  },
+  {
+    name: "Resume",
+    icon: Download,
+    href: "/api/resume",
+    label: "Download my latest resume"
   }
 ]
 
@@ -175,8 +181,8 @@ export function Contact() {
                   key={index}
                   variants={itemVariants}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="group flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >

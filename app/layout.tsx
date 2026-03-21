@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description: 'Full Stack Developer specializing in building scalable web applications with React, Next.js, Node.js, and Ruby on Rails.',
   keywords: ['Full Stack Developer', 'React', 'Next.js', 'Node.js', 'Ruby on Rails', 'Web Developer'],
   authors: [{ name: 'Anmol Sharma' }],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: 'Anmol Sharma | Full Stack Developer',
     description: 'Full Stack Developer specializing in building scalable web applications',

@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react"
 
 const socials = [
-  { icon: Github, href: "https://github.com/anmolsharma", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/anmolsharma", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:anmol@example.com", label: "Email" }
+  { icon: Github, href: "https://github.com/anmolsharma2704", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/anmolsharma2704", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:anmolsharma1441@gmail.com", label: "Email" }
 ]
 
 export function Footer() {
@@ -36,7 +36,7 @@ export function Footer() {
           
           {/* Year */}
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} All rights reserved.
+            © <span suppressHydrationWarning>{new Date().getUTCFullYear()}</span> All rights reserved.
           </p>
         </div>
       </div>
