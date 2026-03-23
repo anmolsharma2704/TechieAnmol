@@ -111,7 +111,7 @@ export function Hero() {
               className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-colors"
               asChild
             >
-              <a href="/resume.pdf" download>
+              <a href="/api/resume">
                 Download Resume
                 <Download className="ml-2 h-4 w-4" />
               </a>

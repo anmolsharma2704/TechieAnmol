@@ -30,7 +30,7 @@ const socials = [
   {
     name: "Resume",
     icon: Download,
-    href: "/resume.pdf",
+    href: "/api/resume",
     label: "Download my latest resume"
   }
 ]

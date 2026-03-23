@@ -3,6 +3,7 @@ import path from "node:path"
 import { NextResponse } from "next/server"
 
 const RESUME_FILE_NAME = "resume.pdf"
+const FALLBACK_RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? process.env.RESUME_URL
 
 export const runtime = "nodejs"
 
@@ -19,11 +20,17 @@ export async function GET() {
         "Content-Disposition": `attachment; filename="${RESUME_FILE_NAME}"`,
       },
     })
-  } catch (error) {
-    console.error(error)
+  } catch {
+    if (FALLBACK_RESUME_URL) {
+      return NextResponse.redirect(FALLBACK_RESUME_URL)
+    }
+
     return NextResponse.json(
-      { error: "Resume file not found." },
-      { status: 404 }
+      {
+        error:
+          "Resume is not available yet. Add public/resume.pdf or set NEXT_PUBLIC_RESUME_URL (or RESUME_URL).",
+      },
+      { status: 503 }
     )
   }
 }
