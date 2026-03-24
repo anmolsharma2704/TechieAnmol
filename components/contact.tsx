@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Linkedin, Github, Send, MapPin, Download } from "lucide-react"
+import { Mail, Linkedin, Github, Send, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
 const socials = [
@@ -26,13 +26,13 @@ const socials = [
     icon: Github,
     href: "https://github.com/anmolsharma2704",
     label: "github.com/anmolsharma2704"
-  },
-  {
-    name: "Resume",
-    icon: Download,
-    href: "/api/resume",
-    label: "Download my latest resume"
   }
+  // {
+  //   name: "Resume",
+  //   icon: Download,
+  //   href: "/api/resume",
+  //   label: "Download my latest resume"
+  // }
 ]
 
 const containerVariants = {
