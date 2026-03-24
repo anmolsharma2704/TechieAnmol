@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Mail } from "lucide-react"
+import { ArrowDown, Download, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Hero() {
@@ -105,7 +105,7 @@ export function Hero() {
               Contact Me
               <Mail className="ml-2 h-4 w-4" />
             </Button>
-            {/* <Button
+            <Button
               size="lg"
               variant="outline"
               className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-colors"
@@ -115,7 +115,7 @@ export function Hero() {
                 Download Resume
                 <Download className="ml-2 h-4 w-4" />
               </a>
-            </Button> */}
+            </Button>
           </motion.div>
         </div>
       </div>
